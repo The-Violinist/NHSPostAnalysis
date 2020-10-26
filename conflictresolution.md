@@ -15,7 +15,7 @@ If the conflict is not resolved, the discussion will be elevated to the group le
 A meeting will be set to discuss the issue and attempt to find a solution.
 If a resolution is not agreed upon by all members of the group, we will take a vote on the matter, taking into consideration:
 The relevance of the subject to the overall product
-Effect on the group overall
+Effect on the group progress overall
 If the conflict does not get resolved within our group, we will then be sure to mention it to one of the Codefellows staff department.
 
 Work plan:
