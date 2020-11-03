@@ -22,4 +22,3 @@ def cracker(user, ipAddress, badFile, secret ):
         print (pxssh failed to login")
         print (e)
         time.sleep(1)
-    
