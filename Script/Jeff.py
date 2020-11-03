@@ -9,9 +9,7 @@
 import smtplib
 import itertools
 import sys
-import time
 from pexpect import pxssh
-import zipfile
 from shutil import copyfile
 from sys import exit
 from scapy.all import *
