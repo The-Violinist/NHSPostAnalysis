@@ -11,7 +11,7 @@ from pypsexec.client import Client #Sending remote commands
 def fileWalk():
     path= "C:\\Users\\IEUsers\\Documents"
     files=[]
-    for r,f in os.walk(path):
+    for r, d, f in os.walk(path):
         for file in f:
             files.append(os.path.join(r,file))
         for f in files:
@@ -21,7 +21,7 @@ def fileWalk():
 def fileWalkP():
     path= "P:\\"
     files=[]
-    for r,f in os.walk(path):
+    for r, d, f in os.walk(path):
         for file in f:
             files.append(os.path.join(r,file))
         for f in files:
