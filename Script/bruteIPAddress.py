@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import smtplib
+
 import paramiko #Bruteforcing SSH connection
 import time #Bruteforcing SSH connection
 from pypsexec.client import Client #Sending remote commands
