@@ -16,8 +16,4 @@ def brute():
         except:
             time.sleep(1)
             print(secret)
-
-    
-
-
 brute()
