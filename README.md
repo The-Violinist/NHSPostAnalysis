@@ -15,12 +15,13 @@ This is a post analysis of the attack and how to prevent future attacks.
 [Project Management](https://github.com/forexsnyder/NHSPostAnalysis/projects/2)
 
 # Network
-
+![Network](https://github.com/forexsnyder/NHSPostAnalysis/blob/feature/planning/images/Network%20Diagram.pdf)
 
 # Data Flow Diagram
 
-# Cyber Kill Chain
 
+# Cyber Kill Chain
+![DFD](https://github.com/forexsnyder/NHSPostAnalysis/blob/feature/planning/images/Cyber%20Kill%20Chain.JPG)
 
 # Synopsis
 
