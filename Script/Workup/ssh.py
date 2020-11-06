@@ -16,4 +16,11 @@ def brute():
         except:
             time.sleep(1)
             print(secret)
-brute()
+    
+
+
+def main():
+    password=brute()
+    print("This is your password    " + password)
+
+main()

