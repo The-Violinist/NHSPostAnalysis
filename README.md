@@ -18,7 +18,7 @@ This is a post analysis of the attack and how to prevent future attacks.
 ![Network](https://github.com/forexsnyder/NHSPostAnalysis/blob/feature/planning/images/Network%20Diagram.pdf)
 
 # Data Flow Diagram
-
+![DFD](https://github.com/forexsnyder/NHSPostAnalysis/blob/feature/planning/images/NHS%20DFD.JPG)
 
 # Cyber Kill Chain
 ![DFD](https://github.com/forexsnyder/NHSPostAnalysis/blob/feature/planning/images/Cyber%20Kill%20Chain.JPG)
