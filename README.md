@@ -15,7 +15,7 @@ On May 12, 2017 a global ransomware attack, known as WannaCry, affected more tha
 [Project Management](https://github.com/forexsnyder/NHSPostAnalysis/projects/2)
 
 # Network
-![Network](https://github.com/forexsnyder/NHSPostAnalysis/blob/feature/planning/images/Network%20Diagram.pdf)
+![Network](https://github.com/forexsnyder/NHSPostAnalysis/blob/feature/planning/images/Network%20Diagram.JPG)
 
 # Data Flow Diagram
 ![DFD](https://github.com/forexsnyder/NHSPostAnalysis/blob/feature/planning/images/NHS%20DFD.JPG)
