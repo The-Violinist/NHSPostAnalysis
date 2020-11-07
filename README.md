@@ -11,13 +11,9 @@ Jeff Snyder, Kim Dills, David Armstrong
 
 [Threat Model Technical Report](https://docs.google.com/document/d/1L5sA7V_M_V-MGkbDahF48nFEeNNldYeY0a4NPBuZFGs/edit?usp=sharing)
 
-[Tabletop Exercise]()
-
-[MITRE Att&ck Framework]()
-
 [SOPs](https://docs.google.com/document/d/1Rwi1nNbYYqMrrCeOg9vhTWUYALrCELIv7FmO0kwvGKM/edit?usp=sharing)
 
-[Resources]()
+[Resources](https://docs.google.com/document/d/1TRhPd1QXovzrMJZx1J1yaf5SPse7_Oydr2mYoiuUUkU/edit?usp=sharing)
 
 # Github Python Code
 [David](https://github.com/forexsnyder/NHSPostAnalysis/tree/main/Script/Workup/David)
