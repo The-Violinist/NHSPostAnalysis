@@ -11,12 +11,20 @@ Jeff Snyder, Kim Dills, David Armstrong
 
 [Threat Model Technical Report](https://docs.google.com/document/d/1L5sA7V_M_V-MGkbDahF48nFEeNNldYeY0a4NPBuZFGs/edit?usp=sharing)
 
-[SOPs](https://docs.google.com/document/d/1Rwi1nNbYYqMrrCeOg9vhTWUYALrCELIv7FmO0kwvGKM/edit?usp=sharing)
-
 [Tabletop Exercise]()
+
+[MITRE Att&ck Framework]()
+
+[SOPs](https://docs.google.com/document/d/1Rwi1nNbYYqMrrCeOg9vhTWUYALrCELIv7FmO0kwvGKM/edit?usp=sharing)
 
 [Resources]()
 
+# Github Contributions
+[David]()
+
+[Kim]()
+
+[Jeff]()
 
 # Attack Overview
 On May 12, 2017 a global ransomware attack, known as WannaCry, affected more than 200,000 computers in more than 100 countries. In the United Kingdom the WannaCry attack affected the National Health Service (NHS), although it was not the specific target. The NHS declared the cyber attack a major incident and implemented its emergency arrangements to be able to maintain health and patient care. On the same day, a cybersecurity researcher found and activated a kill-switch so that WannaCry stopped encrypting and locking devices that evening.
