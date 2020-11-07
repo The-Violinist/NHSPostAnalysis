@@ -4,7 +4,7 @@ import smtplib
 
 #Walkthrough the Documents folder and the P: drive
 def fileWalk():
-    path= "C:/Users/jeff/Documents"
+    path= "C:/Users/IEUser/Documents"
     files=[]
     for r, d, f in os.walk(path):
         for file in f:
