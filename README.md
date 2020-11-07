@@ -2,8 +2,8 @@
 Members:
 Jeff Snyder, Kim Dills, David Armstrong
 
-# Security Assessment Report
-[For an indepth report click on this link](https://docs.google.com/document/d/14-lKrWh_6GCyjQQn09apViVJaiKAdDxJJWTVF3VohT8/edit)
+# Reports
+[Case Study](https://docs.google.com/document/d/14Uwrxz4jwLZqreIHoisFjJ-xs9DkKEinDS3n1PA_sIs/edit?usp=sharing)
 
 # Attack Overview
 On May 12, 2017 a global ransomware attack, known as WannaCry, affected more than 200,000 computers in more than 100 countries. In the United Kingdom the WannaCry attack affected the National Health Service (NHS), although it was not the specific target. The NHS declared the cyber attack a major incident and implemented its emergency arrangements to be able to maintain health and patient care. On the same day, a cybersecurity researcher found and activated a kill-switch so that WannaCry stopped encrypting and locking devices that evening.
