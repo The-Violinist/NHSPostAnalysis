@@ -19,7 +19,7 @@ Jeff Snyder, Kim Dills, David Armstrong
 
 [Resources]()
 
-# Github Contributions
+# Github Python Code
 [David]()
 
 [Kim]()
